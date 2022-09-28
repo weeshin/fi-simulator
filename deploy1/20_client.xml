@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<channel-adaptor name='clientsimulator-adaptor'
+                 class="org.jpos.q2.iso.MultiSessionChannelAdaptor" logger="Q2">
+    <channel class="org.jpos.iso.channel.NACChannel" logger="Q2"
+             packager="org.jpos.iso.packager.GenericPackager" header="6000000000">
+        <property name="packager-config" value="cfg/packager/iso87binary.xml"/>
+        <property name="host" value="127.0.0.1" />
+        <property name="port" value="10000" />
+        <!--<property name="packager-logger" value="Q2" />-->
+        <!--<property name="packager-realm" value="debug" />-->
+    </channel>
+    <sessions>1</sessions>
+    <in>my-send</in>
+    <out>my-receive</out>
+    <reconnect-delay>1000</reconnect-delay>
+</channel-adaptor>
